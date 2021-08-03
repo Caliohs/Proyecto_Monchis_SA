@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[MarcaCamion]
+(
+	  [MarcaCamionId] INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_MarcaCamion PRIMARY KEY CLUSTERED([MarcaCamionId])
+	, Descripcion VARCHAR(250) NOT NULL
+	, Estado BIT NOT NULL
+)
+WITH (DATA_COMPRESSION=PAGE)
+GO
