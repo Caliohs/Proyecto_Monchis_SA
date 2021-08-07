@@ -12,7 +12,7 @@ SET NOCOUNT ON
 
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
-	-- AQUI VA EL CODIG
+	-- AQUI VA EL CODIGO
 		
 	UPDATE Agencias SET
 	    Nombre=@Nombre,
