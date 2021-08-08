@@ -95,6 +95,15 @@
     <Build Include="dbo\StoredProcedures\ConductorInsertar.sql" />
     <Build Include="dbo\StoredProcedures\ConductorLista.sql" />
     <Build Include="dbo\StoredProcedures\ConductorObtener.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoObtener.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoActualizar.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaObtener.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaActualizar.sql" />
+    <Build Include="dbo\StoredProcedures\CategroiaLista.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BaseDatos.refactorlog" />

@@ -32,4 +32,6 @@
     <TypeScriptCompile Include="wwwroot\App\Vehiculo\Grid.ts" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>
