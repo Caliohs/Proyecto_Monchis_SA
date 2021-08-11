@@ -19,7 +19,7 @@ AS BEGIN
 
 	FROM CatalogoCamiones CC
 	 INNER JOIN MarcaCamion MC --InnerJoin porque la relación va ser obligatoria, porque hay presencia de llave foranea
-         ON CC.MarcaCamionId = CC.MarcaCamionId
+         ON MC.MarcaCamionId = CC.MarcaCamionId
 	INNER JOIN Conductores C
 		ON C.ConductorId= CC.ConductorId
 	WHERE

@@ -6,12 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\App\Agencia\Edit.ts" />
-    <Content Remove="wwwroot\App\Agencia\Grid.ts" />
+    <Compile Remove="wwwroot\App\MarcaVehiculo\**" />
+    <Compile Remove="wwwroot\App\Vehiculo\**" />
+    <Content Remove="wwwroot\App\MarcaVehiculo\**" />
+    <Content Remove="wwwroot\App\Vehiculo\**" />
+    <EmbeddedResource Remove="wwwroot\App\MarcaVehiculo\**" />
+    <EmbeddedResource Remove="wwwroot\App\Vehiculo\**" />
+    <None Remove="wwwroot\App\MarcaVehiculo\**" />
+    <None Remove="wwwroot\App\Vehiculo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\App\Camion\Edit.ts" />
+    <Content Remove="wwwroot\App\Camion\Grid.ts" />
+    <Content Remove="wwwroot\App\Conductor\Edit.ts" />
+    <Content Remove="wwwroot\App\Conductor\Grid.ts" />
     <Content Remove="wwwroot\App\Grid.ts" />
-    <Content Remove="wwwroot\App\MarcaVehiculo\Edit.ts" />
-    <Content Remove="wwwroot\App\Vehiculo\Edit.ts" />
-    <Content Remove="wwwroot\App\Vehiculo\Grid.ts" />
+    <Content Remove="wwwroot\App\MarcaCamion\Edit.ts" />
+    <Content Remove="wwwroot\App\MarcaCamion\Grid.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,12 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\App\Agencia\Edit.ts" />
-    <TypeScriptCompile Include="wwwroot\App\Agencia\Grid.ts" />
-    <TypeScriptCompile Include="wwwroot\App\MarcaVehiculo\Edit.ts" />
-    <TypeScriptCompile Include="wwwroot\App\MarcaVehiculo\Grid.ts" />
-    <TypeScriptCompile Include="wwwroot\App\Vehiculo\Edit.ts" />
-    <TypeScriptCompile Include="wwwroot\App\Vehiculo\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Camion\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Camion\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Conductor\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Conductor\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\MarcaCamion\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\MarcaCamion\Grid.ts" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

@@ -7,25 +7,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
 
-namespace WebApplication.Pages
+namespace WebApplication.Pages.Conductor
 {
     public class GridModel : PageModel
     {
-        private readonly IAgenciaService agenciaService;
+        private readonly IConductorService conductorService;
 
-        public GridModel(IAgenciaService agenciaService)
+        public GridModel(IConductorService conductorService)
         {
-            this.agenciaService = agenciaService;
+            this.conductorService = conductorService;
         }
 
-        public IEnumerable<AgenciaEntity> GridList { get; set; } = new List<AgenciaEntity>();
 
-
+        public IEnumerable<ConductorEntity> GridList { get; set; } = new List<ConductorEntity>();
         public async Task<IActionResult> OnGet()
         {
             try
             {
-                GridList = await agenciaService.Get();
+                GridList = await conductorService.Get();
 
 
                 return Page();
@@ -43,9 +42,9 @@ namespace WebApplication.Pages
         {
             try
             {
-                var result = await agenciaService.Delete(new()
+                var result = await conductorService.Delete(new()
                 {
-                    AgenciaId = id
+                   ConductorId = id
                 });
 
 
@@ -59,6 +58,6 @@ namespace WebApplication.Pages
             }
 
         }
+
     }
 }
-

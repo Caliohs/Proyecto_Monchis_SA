@@ -9,7 +9,7 @@
 		BEGIN TRY
 
 		--METODO
-		UPDATE Conductores SET NombreCompleto = @NombreCompleto, Telefono=@Telefono, Estado = @Estado, @Edad=Edad
+		UPDATE Conductores SET NombreCompleto = @NombreCompleto, Telefono=@Telefono, Edad=@Edad, Estado = @Estado
 		WHERE ConductorId = @ConductorId
 		
 

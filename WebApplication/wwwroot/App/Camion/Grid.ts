@@ -1,4 +1,4 @@
-﻿namespace AgenciaGrid {
+﻿namespace CamionGrid {
 
  
 
@@ -9,12 +9,12 @@
                 if (result.isConfirmed) {
                     Loading.fire("Borrando...");
 
-                    App.AxiosProvider.AgenciaEliminar(id).then(data => {
+                    App.AxiosProvider.CamionEliminar(id).then(data => {
                         Loading.close();
 
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se eliminó correctamente", icon: "success" }).then(
-                                () => window.location.href = "Agencia/Grid"
+                                () => window.location.href = "Camion/Grid"
                             );
                         } else {
 

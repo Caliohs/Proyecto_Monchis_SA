@@ -1,0 +1,74 @@
+﻿@page
+@model WebApplication.Pages.Camion.GridModel
+@{
+}
+
+<br />
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+
+           Catalogo de Camiones
+
+        </div>
+        <div class="card-body">
+
+            <a class="btn btn-outline-primary" asp-page="Edit">
+                <i class='bx bxs-comment-add'></i>
+            </a>
+
+            <div class="row">
+
+                <div class="col-12"></div>
+                <table id="GridView" class="table table-bordered table-striped table-over">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Marca</th>
+                            <th>Conductor</th>
+                            <th>Matricula</th>
+                            <th>Color</th>
+                            <th>Fecha de modelo</th>
+                            <th>Estado</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.GridList)
+                        {
+                        <tr>
+                            <td>@item.CamionId</td>
+                            <td>@item.MarcaCamionEntity.Descripcion </td>
+                            <td>@item.ConductorEntity.NombreCompleto</td>
+                            <td>@item.Matricula</td>
+                            <td>@item.Color</td>
+                            <td>@item.FechaModelo</td>
+                            <td>@(item.Estado ?"Activo" :"Inactivo")</td>
+                            <td>
+                                <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.CamionId">
+                                    <i class='bx bx-edit-alt'></i>
+                                </a>
+                                <button type="button" class="btn btn-outline-danger"
+                                        onclick="CamionGrid.OnClickEliminar(@item.CamionId)">
+                                    <i class='bx bx-trash'></i>
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script defer src="~/App/Camion/Grid.js"></script>
+
+}
