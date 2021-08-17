@@ -28,6 +28,22 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.ProductosEliminar = function (id) { return axios.delete("Productos/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ProductosGuardar = function (entity) { return axios.post("Productos/Edit", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.CategoriasEliminar = function (id) { return axios.delete("Categorias/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.CategoriasGuardar = function (entity) { return axios.post("Categorias/Edit", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

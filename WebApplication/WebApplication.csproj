@@ -19,11 +19,15 @@
   <ItemGroup>
     <Content Remove="wwwroot\App\Camion\Edit.ts" />
     <Content Remove="wwwroot\App\Camion\Grid.ts" />
+    <Content Remove="wwwroot\App\Categorias\Edit.ts" />
+    <Content Remove="wwwroot\App\Categorias\Grid.ts" />
     <Content Remove="wwwroot\App\Conductor\Edit.ts" />
     <Content Remove="wwwroot\App\Conductor\Grid.ts" />
     <Content Remove="wwwroot\App\Grid.ts" />
     <Content Remove="wwwroot\App\MarcaCamion\Edit.ts" />
     <Content Remove="wwwroot\App\MarcaCamion\Grid.ts" />
+    <Content Remove="wwwroot\App\Productos\Edit.ts" />
+    <Content Remove="wwwroot\App\Productos\Grid.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,10 +42,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\App\Camion\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Camion\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Categorias\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Categorias\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Conductor\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Conductor\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\MarcaCamion\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\MarcaCamion\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Productos\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Productos\Grid.ts" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

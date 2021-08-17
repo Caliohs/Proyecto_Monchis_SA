@@ -17,7 +17,7 @@ AS BEGIN
 
 	FROM dbo.Productos P
 	 INNER JOIN dbo.Categorias	C
-         ON P.ProductoId = C.CategoriaId
+         ON P.CategoriaId = C.CategoriaId
 	WHERE
 	     (@ProductoId IS NULL OR ProductoId=@ProductoId)
 

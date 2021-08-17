@@ -7,26 +7,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
 
-namespace WebApplication.Pages.Productos
+namespace WebApplication.Pages.Categorias
 {
     public class GridModel : PageModel
     {
-        private readonly IProductosService productoService;
+        private readonly ICategoriasService categoriasService;
 
-        public GridModel(IProductosService productoService)
+        public GridModel(ICategoriasService categoriasService)
         {
-            this.productoService = productoService;
+            this.categoriasService = categoriasService;
         }
 
 
-        public IEnumerable<ProductosEntity> GridList { get; set; } = new List<ProductosEntity>();
+        public IEnumerable<CategoriasEntity> GridList { get; set; } = new List<CategoriasEntity>();
 
-        
+       
         public async Task<IActionResult> OnGet()
         {
             try
             {
-                GridList = await productoService.Get();
+                GridList = await categoriasService.Get();
 
 
                 return Page();
@@ -44,9 +44,9 @@ namespace WebApplication.Pages.Productos
         {
             try
             {
-                var result = await productoService.Delete(new()
+                var result = await categoriasService.Delete(new()
                 {
-                   ProductoId = id
+                    CategoriaId = id
                 });
 
 
@@ -60,5 +60,7 @@ namespace WebApplication.Pages.Productos
             }
 
         }
+
     }
 }
+    

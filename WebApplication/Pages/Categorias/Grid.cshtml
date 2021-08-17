@@ -1,12 +1,12 @@
 ﻿@page
-@model WebApplication.Pages.Productos.GridModel
-@{ }
+@model WebApplication.Pages.Categorias.GridModel
+@{
+}
 
-
-<div class="container-fluid">
+<div class="container">
     <div class="card">
         <div class="card-header">
-            Productos
+            Categorias
         </div>
         <div class="card-body">
 
@@ -20,12 +20,7 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Categoria</th>
-                                <th>Producto</th>
-                                <th>Color</th>
-                                <th>Material</th>
-                                <th>Cantidad Disponible</th>
-                                <th>Precio</th>
+                                <th>Descripción</th>
                                 <th>Estado</th>
                                 <th>Acción</th>
                             </tr>
@@ -34,20 +29,15 @@
                             @foreach (var item in Model.GridList)
                             {
                                 <tr>
-                                    <td>@item.ProductoId</td>
-                                    <td>@item.Categorias.Descripcion</td>
-                                    <td>@item.Producto</td>
-                                    <td>@item.Color</td>
-                                    <td>@item.Material</td>
-                                    <td>@item.Cantidad_Disponible</td>
-                                    <td>@item.Precio</td>
+                                    <td>@item.CategoriaId</td>
+                                    <td>@item.Descripcion</td>
                                     <td>@(item.Estado?"Activo":"Inactivo")</td>
                                     <td>
-                                        <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.ProductoId">
+                                        <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.CategoriaId">
                                             <i class='bx bx-edit-alt'></i>
                                         </a>
                                         <button type="button" class="btn btn-primary"
-                                                onclick="ProductosGrid.OnClickEliminar(@item.ProductoId)">
+                                                onclick="CategoriasGrid.OnClickEliminar(@item.CategoriaId)">
                                             <i class='bx bx-trash'></i>
                                         </button>
                                     </td>
@@ -70,9 +60,6 @@
 @section Scripts{
 
 
-    <script defer src="~/App/Productos/Grid.js"></script>
-
+    <script defer src="~/App/Categorias/Grid.js"></script>
 
 }
-
-

@@ -6,8 +6,8 @@
     <Name>BaseDatos</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{27025f81-f987-4311-a4a4-b1f5596aab64}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <ProjectGuid>{dcf41eaf-609d-4686-a1c9-8cf19a6cf881}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -57,55 +57,50 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="dbo\Tablas" />
     <Folder Include="dbo\StoredProcedures" />
+    <Folder Include="dbo\Tablas" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tablas\Productos.sql" />
-    <Build Include="dbo\StoredProcedures\MarcaCamionObtener.sql" />
-    <Build Include="dbo\StoredProcedures\MarcaCamionInsertar.sql" />
-    <Build Include="dbo\StoredProcedures\MarcaCamionActualizar.sql" />
-    <Build Include="dbo\StoredProcedures\MarcaCamionEliminar.sql" />
-    <Build Include="dbo\StoredProcedures\MarcaCamionLista.sql" />
+    <Build Include="dbo\StoredProcedures\AgenciaActualizar.sql" />
     <Build Include="dbo\StoredProcedures\CamionActualizar.sql" />
     <Build Include="dbo\StoredProcedures\CamionEliminar.sql" />
     <Build Include="dbo\StoredProcedures\CamionInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\CamionLista.sql" />
     <Build Include="dbo\StoredProcedures\CamionObtener.sql" />
     <Build Include="dbo\StoredProcedures\CatalogoCantonLista.sql" />
     <Build Include="dbo\StoredProcedures\CatalogoDistritoLista.sql" />
     <Build Include="dbo\StoredProcedures\CatalogoProvinciaLista.sql" />
-    <Build Include="dbo\Tablas\Categorias.sql" />
-    <Build Include="dbo\Tablas\CatalogoCanton.sql" />
-    <Build Include="dbo\Tablas\CatalogoDistrito.sql" />
-    <Build Include="dbo\Tablas\CatalogoProvincia.sql" />
-    <Build Include="dbo\Tablas\Clientes.sql" />
-    <Build Include="dbo\Tablas\Usuarios.sql" />
-    <Build Include="dbo\Tablas\CatalogoCamiones.sql" />
-    <Build Include="dbo\Tablas\MarcaCamion.sql" />
-    <Build Include="dbo\Tablas\Conductores.sql" />
-    <Build Include="dbo\Tablas\Entregas.sql" />
-    <Build Include="dbo\Tablas\PedidosPorCliente.sql" />
-    <Build Include="dbo\Tablas\PedidosPorProducto.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaActualizar.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\CategoriaObtener.sql" />
+    <Build Include="dbo\StoredProcedures\CategroiaLista.sql" />
     <Build Include="dbo\StoredProcedures\ConductorActualizar.sql" />
     <Build Include="dbo\StoredProcedures\ConductorEliminar.sql" />
     <Build Include="dbo\StoredProcedures\ConductorInsertar.sql" />
     <Build Include="dbo\StoredProcedures\ConductorLista.sql" />
     <Build Include="dbo\StoredProcedures\ConductorObtener.sql" />
-<<<<<<< HEAD
-    <Build Include="dbo\StoredProcedures\CamionLista.sql" />
-=======
-    <Build Include="dbo\StoredProcedures\ProductoObtener.sql" />
-    <Build Include="dbo\StoredProcedures\ProductoInsertar.sql" />
-    <Build Include="dbo\StoredProcedures\ProductoEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\MarcaCamionActualizar.sql" />
+    <Build Include="dbo\StoredProcedures\MarcaCamionEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\MarcaCamionInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\MarcaCamionLista.sql" />
+    <Build Include="dbo\StoredProcedures\MarcaCamionObtener.sql" />
     <Build Include="dbo\StoredProcedures\ProductoActualizar.sql" />
-    <Build Include="dbo\StoredProcedures\CategoriaObtener.sql" />
-    <Build Include="dbo\StoredProcedures\CategoriaInsertar.sql" />
-    <Build Include="dbo\StoredProcedures\CategoriaEliminar.sql" />
-    <Build Include="dbo\StoredProcedures\CategoriaActualizar.sql" />
-    <Build Include="dbo\StoredProcedures\CategroiaLista.sql" />
->>>>>>> b1ea3ed0a27d822767d776f6f790c74a75c1286c
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="BaseDatos.refactorlog" />
+    <Build Include="dbo\StoredProcedures\ProductoEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoObtener.sql" />
+    <Build Include="dbo\Tablas\CatalogoCamiones.sql" />
+    <Build Include="dbo\Tablas\CatalogoCanton.sql" />
+    <Build Include="dbo\Tablas\CatalogoDistrito.sql" />
+    <Build Include="dbo\Tablas\CatalogoProvincia.sql" />
+    <Build Include="dbo\Tablas\Categorias.sql" />
+    <Build Include="dbo\Tablas\Clientes.sql" />
+    <Build Include="dbo\Tablas\Conductores.sql" />
+    <Build Include="dbo\Tablas\Entregas.sql" />
+    <Build Include="dbo\Tablas\MarcaCamion.sql" />
+    <Build Include="dbo\Tablas\PedidosPorCliente.sql" />
+    <Build Include="dbo\Tablas\PedidosPorProducto.sql" />
+    <Build Include="dbo\Tablas\Productos.sql" />
+    <Build Include="dbo\Tablas\Usuarios.sql" />
   </ItemGroup>
 </Project>
