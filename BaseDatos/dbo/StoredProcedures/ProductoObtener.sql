@@ -6,6 +6,7 @@ AS BEGIN
 
 	SELECT
 			P.ProductoId
+		,   P.Producto
 		,   P.Color
 		,   P.Material
 		,   P.Cantidad_Disponible

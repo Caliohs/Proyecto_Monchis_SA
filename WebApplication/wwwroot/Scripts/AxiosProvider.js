@@ -44,6 +44,14 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.ClientesEliminar = function (id) { return axios.delete("Clientes/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ClientesGuardar = function (entity) { return axios.post("Clientes/Edit", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

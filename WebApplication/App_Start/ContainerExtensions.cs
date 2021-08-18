@@ -14,7 +14,7 @@ namespace WebApplication
         public static IServiceCollection AddDIContainer(this IServiceCollection services)
         {
             services.AddSingleton<IDataAccess, DataAccess>();
-       
+            services.AddTransient<IClientesService, ClientesService>();
             services.AddTransient<ICamionService, CamionService>();
             services.AddTransient<IMarcaCamionService, MarcaCamionService>();
             services.AddTransient<IConductorService, ConductorService>();

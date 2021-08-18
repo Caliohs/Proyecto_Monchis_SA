@@ -23,7 +23,9 @@ namespace App.AxiosProvider   {
 
     export const CategoriasGuardar = (entity) => axios.post<DBEntity>("Categorias/Edit", entity).then(({ data }) => data);
 
+    export const ClientesEliminar = (id) => axios.delete<DBEntity>("Clientes/Grid?handler=Eliminar&id=" + id).then(({ data }) => data);
 
+    export const ClientesGuardar = (entity) => axios.post<DBEntity>("Clientes/Edit", entity).then(({ data }) => data);
 }
 
 
