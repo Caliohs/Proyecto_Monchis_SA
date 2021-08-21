@@ -11,7 +11,7 @@ SET NOCOUNT ON
 		INSERT INTO dbo.PedidosPorCliente
 		VALUES(' ', getdate(),0,0,0,1)
 	    
-		select PedidoId from PedidosPorCliente order by PedidoId desc
+		select top 1 PedidoId from PedidosPorCliente order by PedidoId desc
 
 		COMMIT TRANSACTION TRASA
 		

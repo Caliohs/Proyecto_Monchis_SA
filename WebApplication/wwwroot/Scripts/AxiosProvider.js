@@ -60,6 +60,10 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.PedidosEliminar = function (id) { return axios.delete("Pedidos/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

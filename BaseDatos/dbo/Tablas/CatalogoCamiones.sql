@@ -1,8 +1,8 @@
 ﻿CREATE TABLE dbo.CatalogoCamiones
 (
 	CamionId INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Camiones PRIMARY KEY CLUSTERED(CamionId)
-	, MarcaCamionId INT NOT NULL CONSTRAINT FK_Camiones_MarcaCamion FOREIGN KEY(MarcaCamionId) REFERENCES dbo.MarcaCamion(MarcaCamionId)
-	, ConductorId INT NOT NULL CONSTRAINT FK_Conductor_Camion FOREIGN KEY(ConductorId) REFERENCES dbo.Conductores(ConductorId)
+	, [MarcaCamion] VARCHAR(250) NOT NULL
+	, [Conductor] VARCHAR(250) NOT NULL
   , Matricula VARCHAR(250) NOT NULL
   , Color VARCHAR(250) NOT NULL
   , FechaModelo DATE NOT NULL CONSTRAINT DF_Vehiculo_FechaModelo default('2020-01-01')

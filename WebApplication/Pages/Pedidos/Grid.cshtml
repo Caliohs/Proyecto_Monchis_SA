@@ -42,10 +42,10 @@
                                     <td>@(item.Estado?"Asignado":"No asignado")</td>
                                     <td>
                                         <a class="btn btn-primary" asp-page="ViewDetails" asp-route-id="@item.PedidoId">
-                                            Ver Pedido
+                                            Ver Detalles
                                         </a>                                      
                                         <button type="button" class="btn btn-primary"
-                                                onclick="ProductosGrid.OnClickEliminar(@item.PedidoId)">
+                                                onclick="PedidosGrid.OnClickEliminar(@item.PedidoId)">
                                             <i class='bx bx-trash'></i>
                                         </button>
                                     </td>
@@ -69,7 +69,7 @@
 @section Scripts{
 
    
-    @*<script defer src="~/App/Pedidoss/Grid.js"></script>*@
+    <script defer src="~/App/Pedidos/Grid.js"></script>
 
 
 }

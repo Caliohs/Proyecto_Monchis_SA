@@ -15,7 +15,7 @@ var PedidosBegin;
                     App.AxiosProvider.PedidoGuardar(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
-                            Toast.fire({ title: "Se guardó satisfactoriamente", icon: "success" }).then(function () { return window.location.href = "Pedidos/Edit?id=" + _this.Entity.PedidoId; });
+                            Toast.fire({ title: "Cargando...", icon: "success" }).then(function () { return window.location.href = "Pedidos/Edit?id=" + _this.Entity.PedidoId; });
                         }
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" });

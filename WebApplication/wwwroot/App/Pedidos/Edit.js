@@ -14,7 +14,7 @@ var PedidosEdit;
                     App.AxiosProvider.PedidoPorProductoGuardar(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
-                            Toast.fire({ title: "Se guardó satisfactoriamente", icon: "success" });
+                            Toast.fire({ title: "Agregado al pedido", icon: "success" });
                         }
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" });

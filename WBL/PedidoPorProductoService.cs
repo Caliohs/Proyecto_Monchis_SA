@@ -30,7 +30,10 @@ namespace WBL
             try
             {
                 var result = sql.QueryAsync<PedidoPorProductoEntity,ProductosEntity>
-                    ("PedidoObtenerDetalle", "PedidoPorProductoId,ProductoId", entity.PedidoId);
+                    ("PedidoObtenerDetalle", "PedidoPorProductoId,ProductoId", new
+                    {
+                        entity.PedidoId
+                    });
 
                 return await result;
             }

@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE dbo.CamionInsertar
-    @MarcaCamionId INT, @ConductorId INT,
+    @MarcaCamion varchar(250),
+	@Conductor varchar(250),
 	@Matricula varchar(250)	,
 	@Color varchar(250)	,
 	@FechaModelo DATE,
@@ -15,8 +16,8 @@ SET NOCOUNT ON
 		
 		INSERT INTO CatalogoCamiones VALUES
 		(
-		 @MarcaCamionId
-		, @ConductorId
+		 @MarcaCamion
+		, @Conductor
 	    , @Matricula 
 	    , @Color   
 		, @FechaModelo
@@ -24,8 +25,8 @@ SET NOCOUNT ON
 		)
 
 		--ACTUALIZO LOS ESTADOS PARA QUE YA NO ESTEN DISPONIBLES PARA LA LISTA
-		UPDATE Conductores SET Estado=0 WHERE ConductorId= @ConductorId
-		UPDATE MarcaCamion SET Estado=0 WHERE MarcaCamionId= @MarcaCamionId
+		UPDATE Conductores SET Estado=0 WHERE NombreCompleto= @Conductor
+		UPDATE MarcaCamion SET Estado=0 WHERE Descripcion= @MarcaCamion
 
 		COMMIT TRANSACTION TRASA
 		

@@ -111,6 +111,9 @@
     <Build Include="dbo\StoredProcedures\PedidoClienteInsertar.sql" />
     <Build Include="dbo\StoredProcedures\PedidoProductoInsertar.sql" />
     <Build Include="dbo\StoredProcedures\InicializarPedido.sql" />
+    <Build Include="dbo\StoredProcedures\PedidoEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\EntregaObtener.sql" />
+    <Build Include="dbo\StoredProcedures\EntregaInsertar.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BaseDatos.refactorlog" />

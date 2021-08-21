@@ -19,26 +19,35 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" asp-page="#">Inicio</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/Clientes/Grid"> Gestion de Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/Pedidos/Grid"> Gestion de Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/Entregas/Grid"> Gestion de Entregas</a>
+                    </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Administrar Camiones
+                            Gestion de Camiones
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item">
                                 <a class="nav-link"></a>
                             </li>
+                            <li><a class="dropdown-item" href="/Conductor/Grid"> Conductores </a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="/Camion/Grid"> Camiones </a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="/MarcaCamion/Grid"> Marca Camiones </a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/Conductor/Grid"> Conductores </a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seccion Productos
+                            Gestion de Productos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item">
@@ -49,15 +58,7 @@
                             <li><a class="dropdown-item" href="/Categorias/Grid">Categorias </a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Clientes/Grid">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Pedidos/Grid">Pedidos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+
                 </ul>
                 <div class="d-flex">
                     <div class="dropdown dropstart">
@@ -72,16 +73,6 @@
             </div>
         </div>
     </nav>
-
-
-
-
-
-
-
-
-
-
 
 
     <br />

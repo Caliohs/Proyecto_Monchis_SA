@@ -11,7 +11,7 @@ namespace Entity
         public PedidoPorProductoEntity()
         {
             Productos = Productos ?? new ProductosEntity();
-            //Pedido = Pedido ?? new PedidoEntity();
+            Pedido = Pedido ?? new PedidoEntity();
 
         }
 
@@ -20,7 +20,7 @@ namespace Entity
         public virtual ProductosEntity Productos { get; set; }
 
         public int? PedidoId { get; set; }
-       // public virtual PedidoEntity Pedido { get; set; }
+        public virtual PedidoEntity Pedido { get; set; }
        
         public int? Cantidad{ get; set; }
 

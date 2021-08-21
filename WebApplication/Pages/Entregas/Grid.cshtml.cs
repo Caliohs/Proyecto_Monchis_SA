@@ -7,26 +7,29 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
 
-namespace WebApplication.Pages.Pedidos
+namespace WebApplication.Pages.Entregas
 {
     public class GridModel : PageModel
     {
+        private readonly IEntregaService entregaService;
         private readonly IPedidoService pedidoService;
+        private readonly ICamionService camionService;
 
-        public GridModel(IPedidoService pedidoService)
+        public GridModel(IEntregaService entregaService, IPedidoService pedidoService, ICamionService camionService)
         {
+            this.entregaService = entregaService;
             this.pedidoService = pedidoService;
+            this.camionService = camionService;
         }
 
-
-        public IEnumerable<PedidoEntity> GridList { get; set; } = new List<PedidoEntity>();
+        public IEnumerable<EntregaEntity> GridList { get; set; } = new List<EntregaEntity>();
 
         
         public async Task<IActionResult> OnGet()
         {
             try
             {
-                GridList = await pedidoService.Get();
+                GridList = await entregaService.Get();
 
 
                 return Page();
@@ -44,12 +47,12 @@ namespace WebApplication.Pages.Pedidos
         {
             try
             {
-                var result = await pedidoService.Delete(new()
+                var result = await entregaService.Delete(new()
                 {
-                    PedidoId = id
+                   EntregaId  = id
                 });
 
-
+                
 
                 return new JsonResult(result);
             }

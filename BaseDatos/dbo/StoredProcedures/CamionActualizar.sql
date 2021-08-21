@@ -1,5 +1,7 @@
 ﻿CREATE PROCEDURE dbo.CamionActualizar
-	@CamionId INT, @MarcaCamionId INT, @ConductorId INT,
+	@CamionId INT,
+	@MarcaCamion varchar(250),
+	@Conductor varchar(250),
 	@Matricula varchar(250)	,
 	@Color varchar(250)	,
 	@FechaModelo DATE,
@@ -13,8 +15,8 @@ SET NOCOUNT ON
 	-- AQUI VA EL CODIGO
 		
 	UPDATE CatalogoCamiones SET
-	 MarcaCamionId=@MarcaCamionId,
-	 ConductorId=@ConductorId,
+	 MarcaCamion=@MarcaCamion,
+	 Conductor=@Conductor,
 	 Matricula=@Matricula,
 	 Color=@Color,
 	 FechaModelo=@FechaModelo,

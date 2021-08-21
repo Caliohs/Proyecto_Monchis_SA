@@ -34,11 +34,10 @@ namespace WebApplication.Pages.Pedidos
         {
             try
             {
-                if (id.HasValue)
-                {
-                    Entity = await pedidoService.GetById(new() { PedidoId = id });             
-                    GridList = await pedidoPorProductoService.GetByIdDetails(new() { PedidoId = id });
-                }
+                
+                    Entity = await pedidoService.GetById(new() { PedidoId=id });
+                GridList = await pedidoPorProductoService.GetByIdDetails(new() { PedidoId = id });
+              
 
                 return Page();
             }

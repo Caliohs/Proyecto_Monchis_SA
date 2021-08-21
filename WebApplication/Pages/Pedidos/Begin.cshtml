@@ -20,12 +20,7 @@
                                 asp-items="@(new SelectList(Model.ClientesLista,"NombreCompleto", "NombreCompleto"))">
                             <option value=""></option>
                         </select>
-                    </div>
-
-                    <div class="form-group form-check form-switch">
-                     <input class="form-check-input" type="checkbox" asp-for="Entity.Estado" v-model="Entity.Estado" value="true">
-                     <label class="form-check-label" for="Entity_Estado"> Estado </label>
-                   </div>
+                    </div>               
 
                     <div class="card-body">
                         <button type="button" class="btn btn-primary" @@Click="Save" style="font-size:x-large;" asp-route-id="@Model.Entity.PedidoId">

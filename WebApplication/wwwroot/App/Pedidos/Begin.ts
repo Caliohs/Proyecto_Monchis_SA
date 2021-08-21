@@ -22,7 +22,7 @@
 
                             if (data.CodeError == 0) {
 
-                                Toast.fire({ title: "Se guardó satisfactoriamente", icon: "success" }).then(() => window.location.href = "Pedidos/Edit?id=" + this.Entity.PedidoId);
+                                Toast.fire({ title: "Cargando...", icon: "success" }).then(() => window.location.href = "Pedidos/Edit?id=" + this.Entity.PedidoId);
 
                                 
                             } else {

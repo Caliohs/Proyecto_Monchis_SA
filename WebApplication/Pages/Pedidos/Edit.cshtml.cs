@@ -32,6 +32,7 @@ namespace WebApplication.Pages.Pedidos
         [BindProperty]
         [FromBody]
         public PedidoPorProductoEntity Entity { get; set; } = new PedidoPorProductoEntity();
+        public IEnumerable<ProductosEntity> GridListProductos { get; set; } = new List<ProductosEntity>();
 
         public IEnumerable<ClientesEntity> ClientesLista { get; set; } = new List<ClientesEntity>();
         public IEnumerable<ProductosEntity> ProductosLista { get; set; } = new List<ProductosEntity>();
@@ -41,7 +42,9 @@ namespace WebApplication.Pages.Pedidos
             try
             {
                 Entity.PedidoId = id;
-               // ClientesLista = await clientesService.GetLista();
+                // ClientesLista = await clientesService.GetLista();
+                GridListProductos = await productosService.Get();
+
                 ProductosLista = await productosService.GetLista();
                     
                 return Page();

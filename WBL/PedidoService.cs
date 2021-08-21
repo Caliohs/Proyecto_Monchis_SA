@@ -15,6 +15,8 @@ namespace WBL
         Task<PedidoEntity> GetById(PedidoEntity entity);
         Task<int> GetId();
         Task<DBEntity> Create(PedidoEntity entity);
+
+        Task<DBEntity> Delete(PedidoEntity entity);
     }
 
     public class PedidoService : IPedidoService
@@ -47,7 +49,11 @@ namespace WBL
             try
             {
                 var result = sql.QueryFirstAsync<PedidoEntity>
-                    ("PedidoObtener", entity.PedidoId);
+                    ("PedidoObtener", new
+                    {
+                        entity.PedidoId
+                    });
+ 
 
                 return await result;
             }
@@ -73,27 +79,7 @@ namespace WBL
             }
 
         }
-        //public async Task<DBEntity> Create(PedidoEntity entity, PedidoPorProductoEntity en)
-        //{
-        //    try
-        //    {
-        //        var result = sql.ExecuteAsync("PedidoInsertar", new
-        //        {
-        //            en.PedidoId,
-        //            entity.Cliente,       
-        //            entity.Estado,
-
-        //        });
-
-        //        return await result;
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //}
-
+        
         public async Task<DBEntity> Create(PedidoEntity entity)
         {
             try
@@ -102,9 +88,7 @@ namespace WBL
                 {
 
                     entity.PedidoId,
-                    entity.Cliente,                 
-                    entity.Estado
-
+                    entity.Cliente
 
 
                 });
@@ -144,26 +128,26 @@ namespace WBL
         //    }
         //}
 
-        //public async Task<DBEntity> Delete(ProductosEntity entity)
-        //{
-        //    try
-        //    {
-        //        var result = sql.ExecuteAsync("ProductoEliminar", new
-        //        {
-        //            entity.ProductoId,
+        public async Task<DBEntity> Delete(PedidoEntity entity)
+        {
+            try
+            {
+                var result = sql.ExecuteAsync("PedidoEliminar", new
+                {
+                    entity.PedidoId,
 
 
-        //        });
+                });
 
-        //        return await result;
-        //    }
-        //    catch (Exception)
-        //    {
+                return await result;
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
+                throw;
+            }
 
-        //}
+        }
 
     }
 }

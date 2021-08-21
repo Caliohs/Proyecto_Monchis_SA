@@ -33,8 +33,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<CamionEntity,MarcaCamionEntity,ConductorEntity
-                    >("CamionObtener","MarcaCamionId,ConductorId");
+                var result = sql.QueryAsync<CamionEntity>("CamionObtener");
 
                 return await result;
             }
@@ -87,8 +86,8 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("CamionInsertar", new
                 {
-                    entity.MarcaCamionId,
-                    entity.ConductorId,
+                    entity.MarcaCamion,
+                    entity.Conductor,
                     entity.Matricula,
                     entity.Color,
                     entity.FechaModelo,
@@ -113,8 +112,8 @@ namespace WBL
                 var result = sql.ExecuteAsync("CamionActualizar", new
                 {
                     entity.CamionId,
-                    entity.MarcaCamionId,
-                    entity.ConductorId,
+                    entity.MarcaCamion,
+                    entity.Conductor,
                     entity.Matricula,
                     entity.Color,
                     entity.FechaModelo,

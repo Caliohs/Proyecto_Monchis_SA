@@ -1,8 +1,5 @@
-﻿CREATE PROCEDURE dbo.PedidoClienteInsertar
-   
-	@Cliente varchar(250),	
-	@PedidoId INT
-	
+﻿CREATE PROCEDURE PedidoEliminar
+@PedidoId int
 AS BEGIN
 SET NOCOUNT ON
 
@@ -10,8 +7,10 @@ SET NOCOUNT ON
 
 	BEGIN TRY
 
-	update PedidosPorCliente set Cliente=@Cliente
-	where PedidoId=@PedidoId
+		
+	DELETE from PedidosPorProducto where PedidoId=@PedidoId
+	DELETE from PedidosPorCliente where PedidoId=@PedidoId
+
 
 		COMMIT TRANSACTION TRASA
 		

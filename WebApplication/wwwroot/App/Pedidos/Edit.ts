@@ -22,7 +22,7 @@
 
                             if (data.CodeError == 0) {
                                
-                                Toast.fire({ title: "Se guardó satisfactoriamente", icon: "success" })
+                                Toast.fire({ title: "Agregado al pedido", icon: "success" })
                                 
                             } else {
 
