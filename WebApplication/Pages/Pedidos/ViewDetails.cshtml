@@ -1,0 +1,68 @@
+﻿@page
+@model WebApplication.Pages.Pedidos.ViewDetailsModel
+@{ 
+    
+}
+
+<body style="background-color:lightgray;">
+   
+
+    <div id="AppEdit" class="container" style="padding-left: 100px; padding-right: 100px;">
+        <div class="card">
+            <div class="card-header">
+                Detalles del pedido
+            </div>
+            <div class="card-body">
+
+                <label style="font-size:x-large;"> Pedido # @Model.Entity.PedidoId</label><br />
+                <label> Cliente Id: @Model.Entity.Cliente</label><br />
+                <label> Fecha: @Model.Entity.FechaPedido</label><br />
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Cantidad</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Acumulado</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.GridList)
+                        {
+                            <tr>
+                                <td>@item.Cantidad</td>
+                                <td>@item.Productos.Producto</td>
+                                <td> @item.Productos.Precio</td>
+                                <td>@item.Acumulado</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <div class="card-body" style="float:right; padding:40px; font-size:x-large">
+                    Subtotal ₡: <label> @Model.Entity.Subtotal</label><br />
+                    IVA ₡: <label>  @Model.Entity.IVA</label><br />
+                    Total ₡: <label> @Model.Entity.Total</label><br />
+                </div>
+
+            </div>
+            <div class="card-body" style="float:inline-end">
+                <a class="btn btn-primary" asp-page="Grid"> Retornar </a>
+
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+@section Scripts{
+
+
+   @*<script defer src="~/App/Pedidoss/Grid.js"></script>*@
+
+
+}
+
+

@@ -73,7 +73,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<ClientesEntity>("CategoriaLista");
+                var result = sql.QueryAsync<ClientesEntity>("ClientesLista");
 
                 return await result;
             }

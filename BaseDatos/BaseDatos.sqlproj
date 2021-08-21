@@ -105,5 +105,14 @@
     <Build Include="dbo\StoredProcedures\ClientesInsertar.sql" />
     <Build Include="dbo\StoredProcedures\ClientesLista.sql" />
     <Build Include="dbo\StoredProcedures\ClientesObtener.sql" />
+    <Build Include="dbo\StoredProcedures\PedidoObtener.sql" />
+    <Build Include="dbo\StoredProcedures\PedidoObtenerDetalle.sql" />
+    <Build Include="dbo\StoredProcedures\ProductoLista.sql" />
+    <Build Include="dbo\StoredProcedures\PedidoClienteInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\PedidoProductoInsertar.sql" />
+    <Build Include="dbo\StoredProcedures\InicializarPedido.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BaseDatos.refactorlog" />
   </ItemGroup>
 </Project>

@@ -259,6 +259,31 @@ namespace BD
 
 
         }
+        public async Task<T> QueryFirstAsync<T,B>(string sp,  object Param = null, int? Timeout = null)
+        {
+            try
+            {
+
+                using (var exec = DbConnection)
+                {
+                    await exec.OpenAsync();
+
+                    var result = exec.QueryFirstOrDefaultAsync<T>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
+                        , commandTimeout: Timeout);
+                    
+                    return await result;
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
 
         public async Task<DBEntity> ExecuteAsync(string sp, object Param = null, int? Timeout = null)
         {

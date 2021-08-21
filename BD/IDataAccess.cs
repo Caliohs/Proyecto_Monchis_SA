@@ -19,5 +19,6 @@ namespace BD
         Task<IEnumerable<T>> QueryAsync<T, B>(string sp, string split, object Param = null, int? Timeout = null);
         Task<IEnumerable<T>> QueryAsync<T>(string sp, object Param = null, int? Timeout = null);
         Task<T> QueryFirstAsync<T>(string sp, object Param = null, int? Timeout = null);
+        Task<T> QueryFirstAsync<T,B>(string sp, object Param = null, int? Timeout = null);
     }
 }

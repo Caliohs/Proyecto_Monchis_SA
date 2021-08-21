@@ -23,6 +23,9 @@ namespace WebApplication
             services.AddTransient<ICatalogoDistritoService, CatalogoDistritoService>();
             services.AddTransient<IProductosService, ProductosService>();
             services.AddTransient<ICategoriasService, CategoriasService>();
+            services.AddTransient<IPedidoService, PedidoService>();
+            services.AddTransient<IPedidoPorProductoService, PedidoPorProductoService>();
+
 
             return services;
         }

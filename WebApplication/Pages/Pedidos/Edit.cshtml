@@ -1,0 +1,57 @@
+﻿@page
+@model WebApplication.Pages.Pedidos.EditModel
+@{
+    
+}
+<body style="background-color:lightgray;">
+    <div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+        <div class="card">
+            <div class="card-header">
+                nuevo
+            </div>
+            <div class="card-body">
+                <form id="FormEdit">
+
+                    <label asp-for="Entity.PedidoId" style="font-size:x-large;" v-model="Entity.PedidoId"> Pedido # @Model.id</label><br />
+                    <input type="text"  asp-for="@Model.Entity.PedidoId" v-model="Entity.PedidoId" />
+
+                    <div class="card-body">
+
+                        <label for="Entity.ProductoId" class="form-label">Producto</label>
+                        <div class="form-group mb-3" style="width:500px;">
+                            <select class="form-select" asp-for="Entity.ProductoId" v-model="Entity.ProductoId"
+                                    asp-items="@(new SelectList(Model.ProductosLista,"ProductoId", "Producto"))"
+                                    required>
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3" style="width:200px;">
+                            <label for="Entity.Cantidad" class="form-label">Cantidad</label>
+                            <input type="text" class="form-control" asp-for="Entity.Cantidad" v-model="Entity.Cantidad" required />
+                        </div>
+
+                        <div class="col-4">
+                            <button type="button" class="btn btn-primary" @@Click="Save" style="font-size:x-large;">
+                                Agregar
+                            </button>
+                            <a class="btn btn-primary" asp-page="ViewDetails" asp-route-id="@Model.Entity.PedidoId">
+                               Terminar
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </form>
+                 
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+@section Scripts{
+
+    <script defer src="~/App/Pedidos/Edit.js"></script>
+
+}

@@ -1,0 +1,77 @@
+﻿@page
+@model WebApplication.Pages.Pedidos.GridModel
+@{ }
+
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Tabla de pedidos
+        </div>
+        <div class="card-body">
+
+            <a class="btn btn-primary" asp-page="Begin">
+                Añadir nuevo   <i class='bx bx-add-to-queue'></i>
+            </a>
+            <br /><br />
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Cliente</th>
+                                <th>Fecha del Pedido</th>
+                                <th>Subtotal</th>
+                                <th>Iva</th>
+                                <th>Total</th>
+                                <th>Estado de entrega</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr id="1">
+                                    <td>@item.PedidoId</td>
+                                    <td>@item.Cliente</td>
+                                    <td>@item.FechaPedido</td>
+                                    <td>@item.Subtotal</td>
+                                    <td>@item.IVA</td>
+                                    <td>@item.Total</td>
+                                    <td>@(item.Estado?"Asignado":"No asignado")</td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-page="ViewDetails" asp-route-id="@item.PedidoId">
+                                            Ver Pedido
+                                        </a>                                      
+                                        <button type="button" class="btn btn-primary"
+                                                onclick="ProductosGrid.OnClickEliminar(@item.PedidoId)">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+
+   
+    @*<script defer src="~/App/Pedidoss/Grid.js"></script>*@
+
+
+}
+
+

@@ -1,0 +1,56 @@
+﻿@page
+@model WebApplication.Pages.Pedidos.BeginModel
+@{
+}
+<body style="background-color:lightgray;">
+    <div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+        <div class="card">
+            <div class="card-header">
+                nuevo
+            </div>
+            <div class="card-body">
+
+                <label asp-for="Entity.PedidoId" style="font-size:x-large;" v-model="Entity.PedidoId"> Pedido # @Model.Entity.PedidoId</label><br />
+
+                <form id="FormEdit">
+
+                    <div class="card-body" style="width:500px;">
+                        <label for="Entity.Cliente" class="form-label">Cliente</label>
+                        <select class="form-select" asp-for="Entity.Cliente" v-model="Entity.Cliente"
+                                asp-items="@(new SelectList(Model.ClientesLista,"NombreCompleto", "NombreCompleto"))">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-check form-switch">
+                     <input class="form-check-input" type="checkbox" asp-for="Entity.Estado" v-model="Entity.Estado" value="true">
+                     <label class="form-check-label" for="Entity_Estado"> Estado </label>
+                   </div>
+
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary" @@Click="Save" style="font-size:x-large;" asp-route-id="@Model.Entity.PedidoId">
+                            Añadir Productos
+                        </button>
+                        @*<a class="btn btn-primary" asp-page="Edit" asp-route-id="@Model.Entity.PedidoId">
+                            Añadir Productos
+                        </a>*@
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+   
+       
+
+      
+  
+</body>
+@section Scripts{
+
+    
+    <script defer src="~/App/Pedidos/Begin.js"></script>
+
+}

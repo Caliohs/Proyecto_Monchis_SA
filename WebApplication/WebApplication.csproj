@@ -28,6 +28,8 @@
     <Content Remove="wwwroot\App\Clientes\Grid.ts" />
     <Content Remove="wwwroot\App\MarcaCamion\Edit.ts" />
     <Content Remove="wwwroot\App\MarcaCamion\Grid.ts" />
+    <Content Remove="wwwroot\App\Pedidos\Begin.ts" />
+    <Content Remove="wwwroot\App\Pedidos\Edit.ts" />
     <Content Remove="wwwroot\App\Productos\Edit.ts" />
     <Content Remove="wwwroot\App\Productos\Grid.ts" />
   </ItemGroup>
@@ -52,6 +54,8 @@
     <TypeScriptCompile Include="wwwroot\App\Clientes\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\MarcaCamion\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\MarcaCamion\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Pedidos\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Pedidos\Begin.ts" />
     <TypeScriptCompile Include="wwwroot\App\Productos\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Productos\Grid.ts" />
   </ItemGroup>

@@ -52,6 +52,14 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.PedidoPorProductoGuardar = function (entity) { return axios.post("Pedidos/Edit", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.PedidoGuardar = function (entity) { return axios.post("Pedidos/Begin", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map
