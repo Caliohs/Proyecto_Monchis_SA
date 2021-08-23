@@ -33,6 +33,8 @@ namespace App.AxiosProvider   {
 
     export const PedidosEliminar = (id) => axios.delete<DBEntity>("Pedidos/Grid?handler=Eliminar&id=" + id).then(({ data }) => data);
 
+    export const PedidosEliminarP = (id) => axios.delete<DBEntity>("Pedidos/Edit?handler=Eliminar&id=" + id).then(({ data }) => data);
+
     
 }
 

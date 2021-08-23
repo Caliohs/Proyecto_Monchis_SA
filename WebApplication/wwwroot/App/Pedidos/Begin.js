@@ -11,7 +11,7 @@ var PedidosBegin;
             Save: function () {
                 var _this = this;
                 if (BValidateData(this.Formulario)) {
-                    Loading.fire("Guardando..");
+                    // Loading.fire("Guardando..");
                     App.AxiosProvider.PedidoGuardar(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {

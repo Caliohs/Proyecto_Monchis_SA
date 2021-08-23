@@ -64,6 +64,10 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.PedidosEliminarP = function (id) { return axios.delete("Pedidos/Edit?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

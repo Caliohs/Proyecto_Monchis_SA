@@ -14,7 +14,7 @@
             Save() {
 
                 if (BValidateData(this.Formulario)) {
-                    Loading.fire("Guardando..");
+                   // Loading.fire("Guardando..");
 
                     App.AxiosProvider.PedidoGuardar(this.Entity).then(
                         data => {

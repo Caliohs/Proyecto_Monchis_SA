@@ -22,7 +22,8 @@
 
                             if (data.CodeError == 0) {
                                
-                                Toast.fire({ title: "Agregado al pedido", icon: "success" })
+                             (window.location.href = "Pedidos/Edit?id=" + this.Entity.PedidoId);
+
                                 
                             } else {
 
@@ -54,5 +55,31 @@
 
     Formulario.$mount("#AppEdit");
 
+    //-----------------------------------------------------
+    export function OnClickEliminar(id) {
+        
+                    Loading.fire("Borrando...");
+
+                    App.AxiosProvider.PedidosEliminarP(id).then(data => {
+                        Loading.close();
+
+                        if (data.CodeError == 0) {
+                            (() => window.location.href = "Pedidos/Edit?id=" + Entity.PedidoId);
+                                              
+                        } else {
+
+                            Toast.fire({ title: data.MsgError, icon: "error" })
+                        }
+
+                    });
+
+
+
+                
+
+    }
+
+
+    $("#GridView").DataTable();
 
 }

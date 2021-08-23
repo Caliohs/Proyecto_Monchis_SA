@@ -31,9 +31,9 @@ namespace WebApplication.Pages.Pedidos
 
         [BindProperty]
         [FromBody]
-        public PedidoPorProductoEntity Entity { get; set; } = new PedidoPorProductoEntity();
-        public IEnumerable<ProductosEntity> GridListProductos { get; set; } = new List<ProductosEntity>();
 
+        public PedidoPorProductoEntity Entity { get; set; } = new PedidoPorProductoEntity();
+       
         public IEnumerable<ClientesEntity> ClientesLista { get; set; } = new List<ClientesEntity>();
         public IEnumerable<ProductosEntity> ProductosLista { get; set; } = new List<ProductosEntity>();
 
@@ -42,11 +42,14 @@ namespace WebApplication.Pages.Pedidos
             try
             {
                 Entity.PedidoId = id;
-                // ClientesLista = await clientesService.GetLista();
-                GridListProductos = await productosService.Get();
 
+                // ClientesLista = await clientesService.GetLista();
+                //  GridListProductos = await productosService.Get();
+               
                 ProductosLista = await productosService.GetLista();
-                    
+                EntityP = await pedidoService.GetById(new() { PedidoId = id });
+                GridList = await pedidoPorProductoService.GetByIdDetails(new() { PedidoId = id });
+
                 return Page();
             }
             catch (Exception ex)
@@ -57,22 +60,46 @@ namespace WebApplication.Pages.Pedidos
 
         }
 
+        public PedidoEntity EntityP { get; set; } = new PedidoEntity();
+        public IEnumerable<PedidoPorProductoEntity> GridList { get; set; } = new List<PedidoPorProductoEntity>();
 
         public async Task<IActionResult> OnPost()
         {
+            
             try
             {
-
+                        
                 var result = new DBEntity();
 
                 //Nuevo
                     result = await pedidoPorProductoService.Create(Entity);
 
-                
+               
 
                 return new JsonResult(result);
 
 
+            }
+            catch (Exception ex)
+            {
+
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
+            }
+
+        }
+
+        public async Task<JsonResult> OnDeleteEliminar(int id)
+        {
+            try
+            {
+                var result = await pedidoPorProductoService.Delete(new()
+                {
+                    PedidoPorProductoId = id
+                });
+
+
+
+                return new JsonResult(result);
             }
             catch (Exception ex)
             {

@@ -12,6 +12,7 @@ namespace WBL
     {
         Task<IEnumerable<PedidoPorProductoEntity>> GetByIdDetails(PedidoPorProductoEntity entity);
         Task<DBEntity> Create(PedidoPorProductoEntity entity);
+        Task<DBEntity> Delete(PedidoPorProductoEntity entity);
     }
 
     public class PedidoPorProductoService : IPedidoPorProductoService
@@ -94,26 +95,26 @@ namespace WBL
         //    }
         //}
 
-        //public async Task<DBEntity> Delete(ProductosEntity entity)
-        //{
-        //    try
-        //    {
-        //        var result = sql.ExecuteAsync("ProductoEliminar", new
-        //        {
-        //            entity.ProductoId,
+        public async Task<DBEntity> Delete(PedidoPorProductoEntity entity)
+        {
+            try
+            {
+                var result = sql.ExecuteAsync("PedidoProductoEliminar", new
+                {
+                    entity.PedidoPorProductoId,
 
 
-        //        });
+                });
 
-        //        return await result;
-        //    }
-        //    catch (Exception)
-        //    {
+                return await result;
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
+                throw;
+            }
 
-        //}
+        }
 
     }
 }
