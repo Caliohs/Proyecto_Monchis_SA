@@ -31,6 +31,7 @@ namespace WebApplication.Pages.MarcaCamion
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 if (id.HasValue)
                 {
                     Entity = await marcaCamionService.GetById(new() {MarcaCamionId = id });

@@ -31,6 +31,7 @@ namespace WebApplication.Pages.Categorias
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 if (id.HasValue)
                 {
                     Entity = await categoriasService.GetById(new() { CategoriaId = id });

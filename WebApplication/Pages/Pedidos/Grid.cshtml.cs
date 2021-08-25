@@ -26,6 +26,8 @@ namespace WebApplication.Pages.Pedidos
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await pedidoService.Get();
 
 

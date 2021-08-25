@@ -14,6 +14,7 @@ namespace WBL
         Task<IEnumerable<PedidoEntity>> Get();
         Task<PedidoEntity> GetById(PedidoEntity entity);
         Task<int> GetId();
+        Task<IEnumerable<PedidoEntity>> GetLista();
         Task<DBEntity> Create(PedidoEntity entity);
 
         Task<DBEntity> Delete(PedidoEntity entity);
@@ -54,6 +55,21 @@ namespace WBL
                         entity.PedidoId
                     });
  
+
+                return await result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public async Task<IEnumerable<PedidoEntity>> GetLista()
+        {
+            try
+            {
+                var result = sql.QueryAsync<PedidoEntity>("PedidoLista");
 
                 return await result;
             }

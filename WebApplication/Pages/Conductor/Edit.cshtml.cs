@@ -31,6 +31,8 @@ namespace WebApplication.Pages.Conductor
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 if (id.HasValue)
                 {
                     Entity = await conductorService.GetById(new() { ConductorId = id });

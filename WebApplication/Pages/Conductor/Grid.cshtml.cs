@@ -24,6 +24,8 @@ namespace WebApplication.Pages.Conductor
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await conductorService.Get();
 
 

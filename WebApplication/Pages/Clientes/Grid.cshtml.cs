@@ -24,6 +24,9 @@ namespace WebApplication.Pages.Clientes
         {
             try
             {
+
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await clientesService.Get();
 
 

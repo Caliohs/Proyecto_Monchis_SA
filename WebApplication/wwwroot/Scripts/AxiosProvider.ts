@@ -35,7 +35,17 @@ namespace App.AxiosProvider   {
 
     export const PedidosEliminarP = (id) => axios.delete<DBEntity>("Pedidos/Edit?handler=Eliminar&id=" + id).then(({ data }) => data);
 
-    
+    export const EntregasEliminar = (id) => axios.delete<DBEntity>("Entregas/Grid?handler=Eliminar&id=" + id).then(({ data }) => data);
+
+    export const EntregasGuardar = (entity) => axios.post<DBEntity>("Entregas/Edit", entity).then(({ data }) => data);
+
+    export const EntregasChangeProvincia = (entity) => axios.post<any[]>("Entregas/Edit?handler=ChangeProvincia", entity).then(({ data }) => data);
+
+    export const EntregasChangeCanton = (entity) => axios.post<any[]>("Entregas/Edit?handler=ChangeCanton", entity).then(({ data }) => data);
+
+    export const UsuarioRegistrar = (entity) => ServiceApi.post<DBEntity>("api/Usuarios/Registrar", entity).then(({ data }) => data);
+
+    export const UsuarioLogin = (entity) => axios.post<DBEntity>("Login", entity).then(({ data }) => data);
 }
 
 

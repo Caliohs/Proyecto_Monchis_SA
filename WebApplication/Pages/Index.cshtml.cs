@@ -10,12 +10,12 @@ namespace WebApplication.Pages
 {
     public class IndexModel : PageModel
     {
-
-
-
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (!this.SessionOnline()) return RedirectToPage("Login");
 
+            return Page();
         }
     }
 }
+

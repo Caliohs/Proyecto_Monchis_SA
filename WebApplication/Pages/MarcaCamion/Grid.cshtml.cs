@@ -24,6 +24,8 @@ namespace WebApplication.Pages.MarcaCamion
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await marcaCamionService.Get();
 
 

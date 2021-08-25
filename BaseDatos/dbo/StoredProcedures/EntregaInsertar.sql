@@ -1,9 +1,9 @@
 ﻿CREATE PROCEDURE dbo.EntregaInsertar
 	@PedidoId INT,
     @CamionId INT,
-	@Provincia varchar(250),
-	@Canton varchar(250),	
-	@Distrito varchar(250),
+	@ProvinciaId INT,
+	@CantonId INT,	
+	@DistritoId INT,
 	@FechaEntrega date,
 	@Estado bit
 	
@@ -14,26 +14,37 @@ SET NOCOUNT ON
 	BEGIN TRANSACTION TRASA
 
 	BEGIN TRY
-		INSERT INTO Entregas
-		VALUES
-		(
-		@PedidoId,
-		@CamionId ,
-		@Provincia,
-		@Canton,	
-		@Distrito ,
-		@FechaEntrega ,
-		@Estado 
-		)	
+		IF NOT EXISTS(
+		SELECT * FROM dbo.Entregas WHERE CamionId=@CamionId AND FechaEntrega=@FechaEntrega
+	 
+		)
+		BEGIN
+			INSERT INTO Entregas
+			VALUES
+			(
+			@PedidoId,
+			@CamionId ,
+			@ProvinciaId,
+			@CantonId,	
+			@DistritoId ,
+			@FechaEntrega ,
+			@Estado 
+			)
 
-		COMMIT TRANSACTION TRASA
+			update PedidosPorCliente set Estado= 1 where PedidoId=@PedidoId
+
+				SELECT 0 AS CodeError, '' AS MsgError
+		END
+		ELSE BEGIN
+			SELECT -3 AS CodeError, 'Camion y chofer ya reservados para esta fecha' AS MsgError
+		END
+	
+	
+			COMMIT TRANSACTION TRASA
 		
-		SELECT 0 AS CodeError, '' AS MsgError
-
 
 
 	END TRY
-
 	BEGIN CATCH
 		SELECT 
 				ERROR_NUMBER() AS CodeError

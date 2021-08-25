@@ -63,4 +63,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Conductor" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="d307942b-fe95-4ae4-97e1-9a282be3a7ef" ChangeDateTime="08/24/2021 21:00:49">
+    <Property Name="ElementName" Value="[dbo].[Entregas].[Provincia]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Entregas]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProvinciaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2664eac7-c14a-418e-afa4-b10ebd30ad38" ChangeDateTime="08/24/2021 21:00:53">
+    <Property Name="ElementName" Value="[dbo].[Entregas].[Canton]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Entregas]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CantonId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a161b674-1fd8-40ad-bc81-1821096bf357" ChangeDateTime="08/24/2021 21:00:58">
+    <Property Name="ElementName" Value="[dbo].[Entregas].[Distrito]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Entregas]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DistritoId" />
+  </Operation>
 </Operations>

@@ -8,8 +8,8 @@ AS
 
 		SELECT 
 		CamionId,
-		Matricula
-
+		Matricula,
+		Conductor
 		FROM	
 			CatalogoCamiones
 

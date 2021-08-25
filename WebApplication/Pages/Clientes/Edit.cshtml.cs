@@ -31,6 +31,7 @@ namespace WebApplication.Pages.Clientes
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 if (id.HasValue)
                 {
                     Entity = await clientesService.GetById(new() {ClientesId = id });

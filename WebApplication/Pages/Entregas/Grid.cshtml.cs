@@ -12,14 +12,20 @@ namespace WebApplication.Pages.Entregas
     public class GridModel : PageModel
     {
         private readonly IEntregaService entregaService;
-        private readonly IPedidoService pedidoService;
         private readonly ICamionService camionService;
+        private readonly IPedidoService pedidoService;
+        private readonly ICatalogoProvinciaService catalogoProvinciaService;
+        private readonly ICatalogoCantonService catalogoCantonService;
+        private readonly ICatalogoDistritoService catalogoDistritoService;
 
-        public GridModel(IEntregaService entregaService, IPedidoService pedidoService, ICamionService camionService)
+        public GridModel(IEntregaService entregaService, ICamionService camionService, IPedidoService pedidoService, ICatalogoProvinciaService catalogoProvinciaService, ICatalogoCantonService catalogoCantonService, ICatalogoDistritoService catalogoDistritoService)
         {
             this.entregaService = entregaService;
-            this.pedidoService = pedidoService;
             this.camionService = camionService;
+            this.pedidoService = pedidoService;
+            this.catalogoProvinciaService = catalogoProvinciaService;
+            this.catalogoCantonService = catalogoCantonService;
+            this.catalogoDistritoService = catalogoDistritoService;
         }
 
         public IEnumerable<EntregaEntity> GridList { get; set; } = new List<EntregaEntity>();
@@ -29,6 +35,8 @@ namespace WebApplication.Pages.Entregas
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await entregaService.Get();
 
 

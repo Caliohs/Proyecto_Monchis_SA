@@ -6,7 +6,3 @@
 	, Contrasena VARBINARY(max) NOT NULL
 	, Estado BIT NOT NULL
 )
-
-WITH (DATA_COMPRESSION = PAGE)
-GO
-

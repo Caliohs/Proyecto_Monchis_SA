@@ -7,7 +7,7 @@ namespace WebApplication
 {
     public struct IApp
     {
-
+        public static string UsuarioSession => "UsuarioSession";
 
     }
 }

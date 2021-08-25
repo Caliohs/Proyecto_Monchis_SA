@@ -39,6 +39,7 @@ namespace WebApplication.Pages.Camion
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 if (id.HasValue)
                 {
                     Entity = await camionService.GetById(new() {CamionId = id });

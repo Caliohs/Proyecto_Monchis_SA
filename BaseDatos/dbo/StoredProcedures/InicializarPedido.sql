@@ -9,7 +9,7 @@ SET NOCOUNT ON
 
 		
 		INSERT INTO dbo.PedidosPorCliente
-		VALUES(' ', getdate(),0,0,0,1)
+		VALUES(' ', getdate(),0,0,0,0)
 	    
 		select top 1 PedidoId from PedidosPorCliente order by PedidoId desc
 

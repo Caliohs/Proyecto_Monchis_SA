@@ -27,6 +27,8 @@ namespace WebApplication.Pages.Camion
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await camionService.Get();
 
 

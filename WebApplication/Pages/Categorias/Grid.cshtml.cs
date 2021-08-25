@@ -26,6 +26,8 @@ namespace WebApplication.Pages.Categorias
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await categoriasService.Get();
 
 

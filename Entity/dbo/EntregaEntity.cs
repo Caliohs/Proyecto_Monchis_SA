@@ -12,6 +12,9 @@ namespace Entity
         {
             Pedidos = Pedidos ?? new PedidoEntity();
             Camiones = Camiones ?? new CamionEntity();
+            Provincia = Provincia ?? new CatalogoProvinciaEntity();
+            Canton = Canton ?? new CatalogoCantonEntity();
+            Distrito = Distrito ?? new CatalogoDistritoEntity();
         }
 
         public int? EntregaId { get; set; }
@@ -24,11 +27,13 @@ namespace Entity
 
         public virtual CamionEntity Camiones { get; set; }
 
-        public string Provincia { get; set; }
+        public int? ProvinciaId { get; set; }
+        public virtual CatalogoProvinciaEntity Provincia { get; set; }
 
-        public string Canton { get; set; }
-
-        public string Distrito { get; set; }
+        public int? CantonId { get; set; }
+        public virtual CatalogoCantonEntity Canton { get; set; }
+        public int? DistritoId { get; set; }
+        public virtual CatalogoDistritoEntity Distrito { get; set; }
 
         public DateTime FechaEntrega { get; set; }
     }

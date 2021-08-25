@@ -59,7 +59,6 @@
     <Folder Include="dbo\Tablas" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\StoredProcedures\AgenciaActualizar.sql" />
     <Build Include="dbo\StoredProcedures\CamionActualizar.sql" />
     <Build Include="dbo\StoredProcedures\CamionEliminar.sql" />
     <Build Include="dbo\StoredProcedures\CamionInsertar.sql" />
@@ -115,6 +114,11 @@
     <Build Include="dbo\StoredProcedures\EntregaObtener.sql" />
     <Build Include="dbo\StoredProcedures\EntregaInsertar.sql" />
     <Build Include="dbo\StoredProcedures\PedidoProductoEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\EntregaEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\EntregaActualizar.sql" />
+    <Build Include="dbo\StoredProcedures\PedidoLista.sql" />
+    <Build Include="dbo\StoredProcedures\Login.sql" />
+    <Build Include="dbo\StoredProcedures\UsuarioRegistrar.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BaseDatos.refactorlog" />

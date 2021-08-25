@@ -71,10 +71,11 @@
                                     <td>@item.Acumulado</td>
                                     <td>@item.PedidoPorProductoId</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary"
+                                        <button type="button" class="btn btn-danger"
                                                 onclick="PedidosEdit.OnClickEliminar(@item.PedidoPorProductoId)">
                                             <i class='bx bx-trash'></i>
                                         </button>
+
                                     </td>
                                 </tr>
                                 }
@@ -82,7 +83,7 @@
                             </tbody>
                         </table>
                         <div class="card-body" style="float:right; font-size:x-large">
-                            Subtotal ₡: <label> @Model.EntityP.Subtotal</label><br />
+                            Subtotal ₡: <label > @Model.EntityP.Subtotal</label><br />
                             IVA ₡: <label>  @Model.EntityP.IVA</label><br />
                             Total ₡: <label> @Model.EntityP.Total</label><br />
                         </div>

@@ -33,12 +33,13 @@ var PedidosEdit;
     });
     Formulario.$mount("#AppEdit");
     //-----------------------------------------------------
+    //-----------------------------------------------------
     function OnClickEliminar(id) {
         Loading.fire("Borrando...");
         App.AxiosProvider.PedidosEliminarP(id).then(function (data) {
             Loading.close();
             if (data.CodeError == 0) {
-                (function () { return window.location.href = "Pedidos/Edit?id=" + Entity.PedidoId; });
+                Toast.fire({ title: "Se eliminó correctamente", icon: "success" }).then(function () { return window.location.href = "Pedidos/Edit?id=" + Entity.PedidoId; });
             }
             else {
                 Toast.fire({ title: data.MsgError, icon: "error" });

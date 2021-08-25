@@ -13,6 +13,7 @@
             <a class="btn btn-primary" asp-page="Begin">
                 Añadir nuevo   <i class='bx bx-add-to-queue'></i>
             </a>
+           
             <br /><br />
             <div class="row">
                 <div class="col-12">
@@ -25,7 +26,11 @@
                                 <th>Subtotal</th>
                                 <th>Iva</th>
                                 <th>Total</th>
-                                <th>Estado de entrega</th>
+                                <th>
+                                    Estado <a class="btn btn-secondary" asp-page="/Entregas/Edit">
+                                        Asignar <i class='bx bx-add-to-queue'></i>
+                                    </a>
+                                </th>
                                 <th>Acción</th>
                             </tr>
                         </thead>
@@ -39,10 +44,10 @@
                                     <td>@item.Subtotal</td>
                                     <td>@item.IVA</td>
                                     <td>@item.Total</td>
-                                    <td>@(item.Estado?"Asignado":"No asignado")</td>
+                                    <td>@(item.Estado?"Asignado":"NoAsignado")</td>
                                     <td>
                                         <a class="btn btn-primary" asp-page="ViewDetails" asp-route-id="@item.PedidoId">
-                                           Detalles
+                                            Detalles
                                             <i class='bx bx-'></i>
                                         </a>
                                         <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.PedidoId">

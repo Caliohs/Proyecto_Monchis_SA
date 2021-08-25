@@ -68,6 +68,30 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.EntregasEliminar = function (id) { return axios.delete("Entregas/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregasGuardar = function (entity) { return axios.post("Entregas/Edit", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregasChangeProvincia = function (entity) { return axios.post("Entregas/Edit?handler=ChangeProvincia", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregasChangeCanton = function (entity) { return axios.post("Entregas/Edit?handler=ChangeCanton", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.UsuarioRegistrar = function (entity) { return ServiceApi.post("api/Usuarios/Registrar", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.UsuarioLogin = function (entity) { return axios.post("Login", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

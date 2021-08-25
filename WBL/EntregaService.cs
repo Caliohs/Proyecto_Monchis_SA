@@ -13,6 +13,8 @@ namespace WBL
         Task<DBEntity> Create(EntregaEntity entity);
         Task<DBEntity> Delete(EntregaEntity entity);
         Task<IEnumerable<EntregaEntity>> Get();
+        Task<EntregaEntity> GetById(EntregaEntity entity);
+        Task<DBEntity> Update(EntregaEntity entity);
     }
 
     public class EntregaService : IEntregaService
@@ -28,7 +30,8 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<EntregaEntity, PedidoEntity, CamionEntity>("EntregaObtener", "PedidoId, CamionId");
+                var result = sql.QueryAsync<EntregaEntity, PedidoEntity, CamionEntity,CatalogoProvinciaEntity, CatalogoCantonEntity, CatalogoDistritoEntity>
+                    ("EntregaObtener", "PedidoId, CamionId, IdCatalogoProvincia, IdCatalogoCanton, IdCatalogoDistrito");
 
                 return await result;
             }
@@ -40,26 +43,26 @@ namespace WBL
 
         }
 
-        //public async Task<ProductosEntity> GetById(ProductosEntity entity)
-        //{
-        //    try
-        //    {
-        //        var result = sql.QueryFirstAsync<ProductosEntity>("ProductoObtener", new
-        //        {
+        public async Task<EntregaEntity> GetById(EntregaEntity entity)
+        {
+            try
+            {
+                var result = sql.QueryFirstAsync<EntregaEntity>("EntregaObtener", new
+                {
 
-        //            entity.ProductoId
+                    entity.EntregaId
 
-        //        });
+                });
 
-        //        return await result;
-        //    }
-        //    catch (Exception)
-        //    {
+                return await result;
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
+                throw;
+            }
 
-        //}
+        }
 
 
         public async Task<DBEntity> Create(EntregaEntity entity)
@@ -71,9 +74,9 @@ namespace WBL
 
                     entity.PedidoId,
                     entity.CamionId,
-                    entity.Provincia,
-                    entity.Canton,
-                    entity.Distrito,
+                    entity.ProvinciaId,
+                    entity.CantonId,
+                    entity.DistritoId,
                     entity.FechaEntrega,
                     entity.Estado
                 });
@@ -87,31 +90,31 @@ namespace WBL
             }
         }
 
-        //public async Task<DBEntity> Update(ProductosEntity entity)
-        //{
-        //    try
-        //    {
-        //        var result = sql.ExecuteAsync("ProductoActualizar", new
-        //        {
-        //            entity.ProductoId,
-        //            entity.CategoriaId,
-        //            entity.Producto,
-        //            entity.Color,
-        //            entity.Material,
-        //            entity.Cantidad_Disponible,
-        //            entity.Precio,
-        //            entity.Estado
+        public async Task<DBEntity> Update(EntregaEntity entity)
+        {
+            try
+            {
+                var result = sql.ExecuteAsync("EntregaActualizar", new
+                {
+                    entity.EntregaId,
+                    entity.CamionId,
+                    entity.PedidoId,
+                    entity.ProvinciaId,
+                    entity.CantonId,
+                    entity.DistritoId,
+                    entity.FechaEntrega,
+                    entity.Estado
 
-        //        });
+                });
 
-        //        return await result;
-        //    }
-        //    catch (Exception)
-        //    {
+                return await result;
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
-        //}
+                throw;
+            }
+        }
 
         public async Task<DBEntity> Delete(EntregaEntity entity)
         {

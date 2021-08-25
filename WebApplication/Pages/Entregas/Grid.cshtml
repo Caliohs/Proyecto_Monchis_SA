@@ -41,16 +41,16 @@
                                     <td>@item.Camiones.MarcaCamion</td>
                                     <td>@item.Camiones.Matricula</td>
                                     <td>@item.Camiones.Conductor</td>
-                                    <td>@item.Provincia</td>
-                                    <td>@item.Canton</td>
-                                    <td>@item.Distrito</td>
+                                    <td>@item.Provincia.NombreCatalogoProvincia</td>
+                                    <td>@item.Canton.NombreCatalogoCanton</td>
+                                    <td>@item.Distrito.NombreCatalogoDistrito</td>
                                     <td>@item.FechaEntrega</td>
-                                    <td>@(item.Estado?"Pendiente":"Entregado")</td>
+                                    <td>@(item.Estado?"Activa":"Inactiva")</td>
                                     <td>
                                         <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.EntregaId">
                                             <i class='bx bx-edit-alt'></i>
                                         </a>
-                                        <button type="button" class="btn btn-primary"
+                                        <button type="button" class="btn btn-danger"
                                                 onclick="EntregasGrid.OnClickEliminar(@item.EntregaId)">
                                             <i class='bx bx-trash'></i>
                                         </button>
@@ -74,7 +74,7 @@
 @section Scripts{
 
 
-    @*<script defer src="~/App/Productos/Grid.js"></script>*@
+    <script defer src="~/App/Entregas/Grid.js"></script>
 
 
 }

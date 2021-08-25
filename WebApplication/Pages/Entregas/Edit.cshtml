@@ -1,0 +1,98 @@
+﻿@page
+@model WebApplication.Pages.Entregas.EditModel
+@{
+}
+
+
+
+<div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue ? "Actualizar":"Nuevo")
+        </div>
+        <div class="card-body">
+            <form id="FormEdit">
+
+
+                <input type="hidden" asp-for="Entity.EntregaId" v-model="Entity.EntregaId" />
+
+
+                <div class="form-group mb-3">
+                    <label for="Entity.PedidoId" class="form-label">PedidoId</label>
+                    <select class="form-select" asp-for="Entity.PedidoId" v-model="Entity.PedidoId"
+                            asp-items="@(new SelectList(Model.PedidoLista,"PedidoId", "PedidoId"))">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.CamionId" class="form-label">Conductor</label>
+                    <select class="form-select" asp-for="Entity.CamionId" v-model="Entity.CamionId"
+                            asp-items="@(new SelectList(Model.CamionLista,"CamionId", "Conductor"))">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.ProvinciaId" class="form-label">Provincia</label>
+
+                    <select asp-for="Entity.ProvinciaId" class="form-select" v-model="Entity.ProvinciaId"
+                            asp-items="@(new SelectList(Model.ProvinciaLista,"IdCatalogoProvincia","NombreCatalogoProvincia"))"
+                            v-on:change="OnChangeProvincia"
+                            required>
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.CantonId" class="form-label">Canton</label>
+
+                    <select asp-for="Entity.CantonId" class="form-select" v-model="Entity.CantonId"
+                            v-on:change="OnChangeCanton"
+                            required>
+                        <option v-for="item in CantonLista" :value="item.IdCatalogoCanton"> {{item.NombreCatalogoCanton}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.DistritoId" class="form-label">Distrito</label>
+
+                    <select asp-for="Entity.DistritoId" v-model="Entity.DistritoId" class="form-select" required>
+                        <option v-for="item in DistritoLista" :value="item.IdCatalogoDistrito"> {{item.NombreCatalogoDistrito}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.FechaEntrega" class="form-label">Fecha Entrega</label>
+
+                    <b-form-datepicker id="FechaEntrega" name="FechaEntrega" class="form-control" v-model="Entity.FechaEntrega" required>
+                        
+                    </b-form-datepicker>
+                </div>
+
+                <div class="form-group form-check form-switch">
+                    <input class="form-check-input" type="checkbox" asp-for="Entity.Estado" v-model="Entity.Estado" value="true">
+                    <label class="form-check-label" for="Entity_Estado">Estado</label>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" @@click="Save" class="btn btn-outline-primary">
+                            @(Model.id.HasValue ? "Actualizar":"Agregar")
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    <script defer src="~/App/Entregas/Edit.js"></script>
+}
+

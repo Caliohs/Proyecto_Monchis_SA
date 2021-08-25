@@ -34,7 +34,8 @@ namespace WebApplication.Pages.Pedidos
         {
             try
             {
-                
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 Entity.PedidoId =  await pedidoService.GetId();
                 ClientesLista = await clientesService.GetLista();
               
