@@ -33,6 +33,7 @@
     <Content Remove="wwwroot\App\Pedidos\Grid.ts" />
     <Content Remove="wwwroot\App\Productos\Edit.ts" />
     <Content Remove="wwwroot\App\Productos\Grid.ts" />
+    <Content Remove="wwwroot\Assets\template\icons\icon.png" />
   </ItemGroup>
 
   <ItemGroup>

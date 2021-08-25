@@ -44,7 +44,7 @@
                                     <td>@item.Provincia.NombreCatalogoProvincia</td>
                                     <td>@item.Canton.NombreCatalogoCanton</td>
                                     <td>@item.Distrito.NombreCatalogoDistrito</td>
-                                    <td>@item.FechaEntrega</td>
+                                    <td>@item.FechaEntrega.ToString("dd/MM/yyyy")</td>
                                     <td>@(item.Estado?"Activa":"Inactiva")</td>
                                     <td>
                                         <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.EntregaId">

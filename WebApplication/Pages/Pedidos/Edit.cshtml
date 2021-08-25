@@ -7,14 +7,12 @@
     <div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
         <div class="card">
             <div class="card-header">
-                nuevo
+                <label asp-for="Entity.PedidoId" style="font-size:x-large;" v-model="Entity.PedidoId"> Pedido # @Model.id</label>            
             </div>
             <div class="card-body">
                 <form id="FormEdit">
                     <input type="hidden" asp-for="@Model.Entity.PedidoId" v-model="Entity.PedidoId" />
-                    <label asp-for="Entity.PedidoId" style="font-size:x-large;" v-model="Entity.PedidoId"> Pedido # @Model.id</label>
-                    <br />
-
+                    
                     <div class="card-body" style="float:left;">
 
                         <label for="Entity.ProductoId" class="form-label">Producto</label>
@@ -24,7 +22,9 @@
                                     required>
                                 <option value=""></option>
                             </select>
+
                         </div>
+
 
                         <div class="form-group mb-3" style="width:200px;">
                             <label for="Entity.Cantidad" class="form-label">Cantidad</label>
@@ -44,7 +44,9 @@
 
                         </div>
                     </div>
-
+                    <!-- -------------------------------------------------------------- -->
+                    <!-- Tabla de productos agregados -->
+                    <!-- -------------------------------------------------------------- -->
                     <div class="card-body" style="float: left;">
 
                         <table class="table table-hover">
@@ -63,47 +65,80 @@
                             <tbody>
                                 @foreach (var item in Model.GridList)
                                 {
-                                <tr>
+                                    <tr>
 
-                                    <td>@item.Cantidad</td>
-                                    <td>@item.Productos.Producto</td>
-                                    <td> @item.Productos.Precio</td>
-                                    <td>@item.Acumulado</td>
-                                    <td>@item.PedidoPorProductoId</td>
-                                    <td>
-                                        <button type="button" class="btn btn-danger"
-                                                onclick="PedidosEdit.OnClickEliminar(@item.PedidoPorProductoId)">
-                                            <i class='bx bx-trash'></i>
-                                        </button>
+                                        <td>@item.Cantidad</td>
+                                        <td>@item.Productos.Producto</td>
+                                        <td> @item.Productos.Precio</td>
+                                        <td>@item.Acumulado</td>
+                                        <td>@item.PedidoPorProductoId</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger"
+                                                    onclick="PedidosEdit.OnClickEliminar(@item.PedidoPorProductoId)">
+                                                <i class='bx bx-trash'></i>
+                                            </button>
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 }
 
                             </tbody>
                         </table>
                         <div class="card-body" style="float:right; font-size:x-large">
-                            Subtotal ₡: <label > @Model.EntityP.Subtotal</label><br />
+                            Subtotal ₡: <label> @Model.EntityP.Subtotal</label><br />
                             IVA ₡: <label>  @Model.EntityP.IVA</label><br />
                             Total ₡: <label> @Model.EntityP.Total</label><br />
                         </div>
                     </div>
 
+
+
                 </form>
+                <!-- -------------------------------------------------------------- -->
+                <!-- Tabla de producto -->
+                <!-- -------------------------------------------------------------- -->
+                <div class="card-body">
+
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Disponibles</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ProductosLista)
+                            {
+                                <tr>
+
+                                    <td>@item.Producto</td>
+                                    <td>@item.Precio</td>
+                                    <td> @item.Cantidad_Disponible</td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+
 
             </div>
 
-            
+
 
 
         </div>
-    </div>
+     </div>
 
 
-   
-</body>
-@section Scripts{
 
-    <script defer src="~/App/Pedidos/Edit.js"></script>
+        </body>
+        @section Scripts{
 
-}
+            <script defer src="~/App/Pedidos/Edit.js"></script>
+
+        }

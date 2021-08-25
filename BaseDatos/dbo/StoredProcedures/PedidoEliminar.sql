@@ -14,7 +14,7 @@ SET NOCOUNT ON
 
 		COMMIT TRANSACTION TRASA
 		
-		SELECT 0 AS CodeError, '' AS MsgError
+		SELECT 0 AS CodeError, 'No fue posible eliminar, hay una entrega asignada a este pedido' AS MsgError
 
 
 
